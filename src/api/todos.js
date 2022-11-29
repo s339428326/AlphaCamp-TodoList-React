@@ -2,12 +2,11 @@ import axios from 'axios';
 
 const port = 3001;
 const BASE_URL = `http://localhost:${port}`;
-const TODOS_URL = BASE_URL + '/todos';
-console.log(TODOS_URL);
+const TODOS_URL = BASE_URL + '/todos/';
 
 export const getTodos = async () => {
   try {
-    const res = await await axios.get(TODOS_URL);
+    const res = await axios.get(TODOS_URL);
     return res.data;
   } catch (error) {
     console.log('[Get Todo failed]', error);
@@ -19,10 +18,9 @@ export const createTodos = async (payload) => {
     console.log('Please createTodos fn parameter');
     return;
   }
-
   try {
     const { title, isDone } = payload;
-    const res = axios.post(TODOS_URL, {
+    const res = await axios.post(TODOS_URL, {
       title,
       isDone,
     });
@@ -32,13 +30,24 @@ export const createTodos = async (payload) => {
   }
 };
 
-export const patchTodos = async (id) => {
+export const patchTodos = async (payload) => {
+  const { id, title, isDone } = payload;
   try {
-    const res = await await axios.get(TODOS_URL + id);
+    const res = await axios.patch(TODOS_URL + id, {
+      title,
+      isDone,
+    });
     return res.data;
   } catch (error) {
     console.log('[Patch Todo failed]', error);
   }
 };
 
-export const deleteTodos = async () => {};
+export const deleteTodos = async (id) => {
+  try {
+    const res = await axios.delete(TODOS_URL + id);
+    return res.data;
+  } catch (error) {
+    console.error('[Delete Todo failed]', error);
+  }
+};
