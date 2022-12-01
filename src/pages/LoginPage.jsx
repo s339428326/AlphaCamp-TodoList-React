@@ -4,7 +4,7 @@ import {
   AuthButton,
   AuthLinkText,
 } from 'components/common/auth.styled';
-import { checkPermission, login } from 'api/auth';
+import { useAuth } from 'contexts/AuthContext';
 import { ACLogoIcon } from 'assets/images';
 import { AuthInput } from 'components';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,13 +14,17 @@ const LoginPage = () => {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
 
   const handleLogin = async () => {
     if (!(username && password)) return;
-    const { success, authToken } = await login({ username, password });
-    console.log('handle', authToken);
+
+    const success = await login({
+      username,
+      password,
+    });
+
     if (success) {
-      localStorage.setItem('authToken', authToken);
       // 登入成功訊息
       Swal.fire({
         position: 'top',
@@ -29,7 +33,6 @@ const LoginPage = () => {
         icon: 'success',
         showConfirmButton: false,
       });
-      navigate('/todo');
       return;
     }
     Swal.fire({
@@ -42,16 +45,10 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    const checkTokenIsValid = async () => {
-      const authToken = localStorage.getItem('authToken');
-      if (!authToken) return;
-      const isValid = checkPermission(authToken);
-      if (isValid) {
-        navigate('/todo');
-      }
-    };
-    checkTokenIsValid();
-  }, [navigate]);
+    if (isAuthenticated === true) {
+      navigate('/todo');
+    }
+  }, [navigate, isAuthenticated]);
 
   return (
     <AuthContainer>
