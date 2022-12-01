@@ -4,15 +4,16 @@ import {
   AuthButton,
   AuthLinkText,
 } from 'components/common/auth.styled';
-import { login } from 'api/auth';
+import { checkPermission, login } from 'api/auth';
 import { ACLogoIcon } from 'assets/images';
 import { AuthInput } from 'components';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 const LoginPage = () => {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     if (!(username && password)) return;
@@ -28,6 +29,7 @@ const LoginPage = () => {
         icon: 'success',
         showConfirmButton: false,
       });
+      navigate('/todo');
       return;
     }
     Swal.fire({
@@ -38,6 +40,18 @@ const LoginPage = () => {
       showConfirmButton: false,
     });
   };
+
+  useEffect(() => {
+    const checkTokenIsValid = async () => {
+      const authToken = localStorage.getItem('authToken');
+      if (!authToken) return;
+      const isValid = checkPermission(authToken);
+      if (isValid) {
+        navigate('/todo');
+      }
+    };
+    checkTokenIsValid();
+  }, [navigate]);
 
   return (
     <AuthContainer>

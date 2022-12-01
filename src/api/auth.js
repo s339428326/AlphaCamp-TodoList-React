@@ -19,3 +19,31 @@ export const login = async ({ username, password }) => {
     console.error(error);
   }
 };
+
+export const register = async ({ username, email, password }) => {
+  try {
+    const { data } = await axios.post(AUTH_URL + 'register', {
+      username,
+      email,
+      password,
+    });
+
+    const { authToken } = data;
+    if (authToken) return { success: true, ...data };
+  } catch (error) {
+    console.error('[Register Failed]: ', error);
+  }
+};
+
+export const checkPermission = async (authToken) => {
+  try {
+    const res = await axios.get(AUTH_URL + '/test-token', {
+      headers: {
+        Authorization: 'Bearer' + authToken,
+      },
+    });
+    return res.data.success;
+  } catch (error) {
+    console.error('[Check Permission Failed]', error);
+  }
+};
