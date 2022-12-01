@@ -37,9 +37,9 @@ export const register = async ({ username, email, password }) => {
 
 export const checkPermission = async (authToken) => {
   try {
-    const res = await axios.get(AUTH_URL + '/test-token', {
+    const res = await axios.get(AUTH_URL + 'test-token', {
       headers: {
-        Authorization: 'Bearer' + authToken,
+        Authorization: 'Bearer ' + authToken,
       },
     });
     return res.data.success;

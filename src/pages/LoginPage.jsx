@@ -4,6 +4,7 @@ import {
   AuthButton,
   AuthLinkText,
 } from 'components/common/auth.styled';
+
 import { useAuth } from 'contexts/AuthContext';
 import { ACLogoIcon } from 'assets/images';
 import { AuthInput } from 'components';
@@ -23,7 +24,7 @@ const LoginPage = () => {
       username,
       password,
     });
-
+    console.log(success);
     if (success) {
       // 登入成功訊息
       Swal.fire({

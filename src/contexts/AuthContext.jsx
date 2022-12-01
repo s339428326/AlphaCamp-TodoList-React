@@ -3,7 +3,7 @@ import { login, register, checkPermission } from 'api/auth';
 import * as jwt from 'jsonwebtoken';
 import { useLocation } from 'react-router-dom';
 
-const defalutAuthContext = {
+const defaultAuthContext = {
   isAuthenticated: false,
   currentMember: null,
   register: null,
@@ -11,7 +11,7 @@ const defalutAuthContext = {
   logout: null,
 };
 
-const AuthContext = createContext(defalutAuthContext);
+const AuthContext = createContext(defaultAuthContext);
 
 export const useAuth = () => useContext(AuthContext);
 
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
       }
       const isValid = await checkPermission(authToken);
       if (isValid) {
-        isAuthenticated(true);
+        setIsAuthenticated(true);
         const tempPayload = jwt.decode(authToken);
         setPayload(tempPayload);
       } else {
@@ -51,11 +51,11 @@ export const AuthProvider = ({ children }) => {
         },
         register: async (data) => {
           const { success, authToken } = await register({
-            username: data.name,
+            username: data.username,
             email: data.email,
             password: data.password,
           });
-          const tempPayload = jwt.decodeed(authToken);
+          const tempPayload = jwt.decode(authToken);
           if (tempPayload) {
             setPayload(tempPayload);
             setIsAuthenticated(true);
@@ -71,21 +71,21 @@ export const AuthProvider = ({ children }) => {
             username: data.username,
             password: data.password,
           });
-          const tempPayload = jwt.decodeed(authToken);
+          const tempPayload = jwt.decode(authToken);
           if (tempPayload) {
             setPayload(tempPayload);
-            isAuthenticated(true);
+            setIsAuthenticated(true);
             localStorage.setItem('authToken', authToken);
           } else {
             setPayload(null);
-            isAuthenticated(false);
+            setIsAuthenticated(false);
           }
           return success;
         },
         logout: () => {
           localStorage.removeItem('authToken');
           setPayload(null);
-          isAuthenticated(false);
+          setIsAuthenticated(false);
           navigator('/login');
         },
       }}
