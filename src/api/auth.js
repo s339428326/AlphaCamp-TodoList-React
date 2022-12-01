@@ -30,6 +30,7 @@ export const register = async ({ username, email, password }) => {
 
     const { authToken } = data;
     if (authToken) return { success: true, ...data };
+    return data;
   } catch (error) {
     console.error('[Register Failed]: ', error);
   }

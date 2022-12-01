@@ -26,6 +26,7 @@ const SignUpPage = () => {
       email,
       password,
     });
+    console.log(success);
     if (success) {
       Swal.fire({
         position: 'top',
