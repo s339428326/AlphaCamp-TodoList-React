@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AlphaCamp-TodoList-React/static/css/main.8a192b7b.chunk.css",
-    "main.js": "/AlphaCamp-TodoList-React/static/js/main.89b9dbb7.chunk.js",
-    "main.js.map": "/AlphaCamp-TodoList-React/static/js/main.89b9dbb7.chunk.js.map",
+    "main.js": "/AlphaCamp-TodoList-React/static/js/main.5b605656.chunk.js",
+    "main.js.map": "/AlphaCamp-TodoList-React/static/js/main.5b605656.chunk.js.map",
     "runtime-main.js": "/AlphaCamp-TodoList-React/static/js/runtime-main.dde175e5.js",
     "runtime-main.js.map": "/AlphaCamp-TodoList-React/static/js/runtime-main.dde175e5.js.map",
     "static/js/2.cc5f0b67.chunk.js": "/AlphaCamp-TodoList-React/static/js/2.cc5f0b67.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.dde175e5.js",
     "static/js/2.cc5f0b67.chunk.js",
     "static/css/main.8a192b7b.chunk.css",
-    "static/js/main.89b9dbb7.chunk.js"
+    "static/js/main.5b605656.chunk.js"
   ]
 }
