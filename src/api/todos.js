@@ -36,7 +36,10 @@ export const createTodos = async (payload) => {
     return;
   }
   try {
-    const { title, isDone } = payload;
+    let { title, isDone } = payload;
+    isDone = true;
+    console.log('API錯誤！暫時將每個todo預設設置true');
+    console.log(payload, title, isDone, 'Check!');
     const res = await axiosInstance.post(TODOS_URL, {
       title,
       isDone,

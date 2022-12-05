@@ -19,7 +19,7 @@ const TodoPage = () => {
     try {
       const data = await createTodos({
         title: inputValue,
-        isDone: false,
+        isDone: true,
       });
       setTodos((prevTodos) => {
         return [
