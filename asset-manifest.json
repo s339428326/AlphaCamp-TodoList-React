@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/AlphaCamp-TodoList-React/static/css/main.81e9703d.chunk.css",
-    "main.js": "/AlphaCamp-TodoList-React/static/js/main.9e34dbf4.chunk.js",
-    "main.js.map": "/AlphaCamp-TodoList-React/static/js/main.9e34dbf4.chunk.js.map",
-    "runtime-main.js": "/AlphaCamp-TodoList-React/static/js/runtime-main.310a6518.js",
-    "runtime-main.js.map": "/AlphaCamp-TodoList-React/static/js/runtime-main.310a6518.js.map",
-    "static/js/2.60092562.chunk.js": "/AlphaCamp-TodoList-React/static/js/2.60092562.chunk.js",
-    "static/js/2.60092562.chunk.js.map": "/AlphaCamp-TodoList-React/static/js/2.60092562.chunk.js.map",
-    "static/js/3.e98f0386.chunk.js": "/AlphaCamp-TodoList-React/static/js/3.e98f0386.chunk.js",
-    "static/js/3.e98f0386.chunk.js.map": "/AlphaCamp-TodoList-React/static/js/3.e98f0386.chunk.js.map",
+    "main.css": "/AlphaCamp-TodoList-React/static/css/main.8a192b7b.chunk.css",
+    "main.js": "/AlphaCamp-TodoList-React/static/js/main.89b9dbb7.chunk.js",
+    "main.js.map": "/AlphaCamp-TodoList-React/static/js/main.89b9dbb7.chunk.js.map",
+    "runtime-main.js": "/AlphaCamp-TodoList-React/static/js/runtime-main.dde175e5.js",
+    "runtime-main.js.map": "/AlphaCamp-TodoList-React/static/js/runtime-main.dde175e5.js.map",
+    "static/js/2.cc5f0b67.chunk.js": "/AlphaCamp-TodoList-React/static/js/2.cc5f0b67.chunk.js",
+    "static/js/2.cc5f0b67.chunk.js.map": "/AlphaCamp-TodoList-React/static/js/2.cc5f0b67.chunk.js.map",
+    "static/js/3.9f271d6f.chunk.js": "/AlphaCamp-TodoList-React/static/js/3.9f271d6f.chunk.js",
+    "static/js/3.9f271d6f.chunk.js.map": "/AlphaCamp-TodoList-React/static/js/3.9f271d6f.chunk.js.map",
     "index.html": "/AlphaCamp-TodoList-React/index.html",
-    "static/css/main.81e9703d.chunk.css.map": "/AlphaCamp-TodoList-React/static/css/main.81e9703d.chunk.css.map",
-    "static/js/2.60092562.chunk.js.LICENSE.txt": "/AlphaCamp-TodoList-React/static/js/2.60092562.chunk.js.LICENSE.txt",
+    "static/css/main.8a192b7b.chunk.css.map": "/AlphaCamp-TodoList-React/static/css/main.8a192b7b.chunk.css.map",
+    "static/js/2.cc5f0b67.chunk.js.LICENSE.txt": "/AlphaCamp-TodoList-React/static/js/2.cc5f0b67.chunk.js.LICENSE.txt",
     "static/media/ac-logo.f4e0f3cb.svg": "/AlphaCamp-TodoList-React/static/media/ac-logo.f4e0f3cb.svg",
     "static/media/check-active.95ca055c.svg": "/AlphaCamp-TodoList-React/static/media/check-active.95ca055c.svg",
     "static/media/check-circle.30720b46.svg": "/AlphaCamp-TodoList-React/static/media/check-circle.30720b46.svg",
     "static/media/check-hover.5e00062b.svg": "/AlphaCamp-TodoList-React/static/media/check-hover.5e00062b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.310a6518.js",
-    "static/js/2.60092562.chunk.js",
-    "static/css/main.81e9703d.chunk.css",
-    "static/js/main.9e34dbf4.chunk.js"
+    "static/js/runtime-main.dde175e5.js",
+    "static/js/2.cc5f0b67.chunk.js",
+    "static/css/main.8a192b7b.chunk.css",
+    "static/js/main.89b9dbb7.chunk.js"
   ]
 }
