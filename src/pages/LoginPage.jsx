@@ -24,7 +24,6 @@ const LoginPage = () => {
       username,
       password,
     });
-    console.log(success);
     if (success) {
       // 登入成功訊息
       Swal.fire({
